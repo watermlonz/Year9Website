@@ -1,0 +1,181 @@
+.navbarCollapsible {
+    background-image: url("buttonimage.jpg");
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.active, .navbarCollapsible:hover {
+    background-color: #f2b183;
+}
+
+.collapsibleContent {
+    padding: 0 0px;
+    max-height: 0;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    bottom: 7.6%;
+    left: 0;
+    transition: max-height 0.3s ease-out;
+    background-color: #f1f1f1;
+
+}
+
+#fixedBackground {
+    background-image: url("default_background.jpg");
+    min-height: 700px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fixedBackgroundText {
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.3);
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 49%;
+    left: 58%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 75%;
+    padding: 30px;
+    text-align: right;
+}
+
+.highlightUNSDG6 {
+    color: lightblue
+}
+
+.highlightUNSDG14 {
+    color: #007cc9
+}
+
+.highlightColour {
+    color: darkorange
+}
+
+.chemicalColour {
+    color: darkcyan
+}
+
+a:link {
+    font-weight: bold;
+    text-decoration: none;
+    color: darkturquoise
+}
+
+a:visited {
+    font-weight: bold;
+    text-decoration: none;
+    color: darkslateblue
+}
+
+a:hover {
+    font-weight: bold;
+    text-decoration: none;
+    color: royalblue
+}
+
+.collapsibleTabs {
+    background-color: white;
+    color: black;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 50%;
+    transition: 0.3s;
+}
+.collapsibleTabs:hover {
+    background-color: peachpuff;
+    transition: 0.3s;
+}
+
+.tabContent {
+    color: black;
+    display: none;
+    padding: 50px 20px;
+    height: 100%;
+}
+
+* {
+box-sizing: border-box;
+}
+
+#Home {
+    background-image: url("websitebackground.jpg");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 1450px;
+}
+
+.boxHome {
+    width: 50%;
+    padding: 10px;
+    padding-left: 40px;
+    padding-bottom: 26px;
+    margin: 0;
+    float: left;
+}
+
+.boxChart {
+    width: 100%;
+    max-width: 692px;
+    padding: 10px;
+    padding-left: 26px;
+    background-color: #ffe5cf;
+}
+
+.boxHighlighted {
+    padding: 10px;
+}
+
+.homeAdjacent:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#Chemical {
+    background-image: url("plasticpollutionbg.jpg");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 1450px;
+}
+
+.boxChemical {
+    width: 70%;
+    padding: 10px;
+    padding-bottom: 27px;
+    padding-left: 25px;
+    margin: 0;
+    float: left;
+}
+
+.boxOrganizationImg {
+    width: 30%;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 7px;
+    margin: 0;
+    float: left;
+}
+
+
+.chemicalAdjacent:after {
+    content: "";
+    display: table;
+    clear: both;
+}

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- reads the style.css document for style tags.-->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <body>
+        <!-- code for the background image displayed at the top of the page.-->
+        <div id="fixedBackground"></div>
+
+        <div class="fixedBackgroundText">
+            <h1 style="font-size:50px;font-family:helvetica">
+                UN Sustainable Development Goal <span class="highlightUNSDG6">6</span> & <span class="highlightUNSDG14">14</span>
+            </h1>
+            <p style="font-size:25px;font-family:helvetica">
+                <span class="highlightUNSDG6">Clean Water and Sanitation</span> & <span class="highlightUNSDG14">Life Below Water</span>
+            </p>
+        </div>
+
+        <!-- navigation bar below the background/title image.-->
+        <!-- I chose to include this code because it shows how I can use my knowledge to incorperate some JavaScript into parts of my website to make it more reactive and unique in an attempt to keep the attention of the users of my website.-->
+        <button type="button" class="navbarCollapsible"><br></button>
+
+        <div class="collapsibleContent">
+            <p>
+                <!-- buttons in the collapsible menu that lead to the different tabs of the site. (Open different tabs & change the background image above.)-->
+                <button class="collapsibleTabs" onclick="changeBackgroundHome();openPage('Home', this)">Home</button>
+                <button class="collapsibleTabs" onclick="changeBackgroundChemical();openPage('Chemical', this)">Chemical Pollution</button>
+            </p>
+        </div>
+
+        <!-- functions that change the background image accordingly when a tab button is pressed.-->
+        <script>
+            function changeBackgroundHome() {
+                document.getElementById("fixedBackground").style.backgroundImage = "url(home_background.jpg)";
+            }
+        </script>
+
+        <script>
+            function changeBackgroundChemical() {
+                document.getElementById("fixedBackground").style.backgroundImage = "url(chemical_background.jpg)";
+            }
+        </script>
+
+        <!-- code for the "Home" tab.-->
+        <div id="Home" class="tabContent">
+            <!-- formats the two boxes so that they are adjacent to each other.-->
+            <div class="HomeAdjacent">
+
+                <!-- text box on the left side of the tab.-->
+                <body>
+                    <div class="boxHome" style="background-color: azure;">
+                        <h1 style="font-size:50px;font-family:helvetica">
+                            IN 2017,
+                        </h1>
+                        <p style="font-size:40px;font-family:helvetica;font-weight: bold">
+                            More than a <span class="highlightColour">third</span> <br> of the world still didn't have access to clean water.
+                            <br>
+                        </p>
+                    </div>
+                </body>
+
+                <!-- graph + background box-->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+                <body>
+                    <canvas id="myChart" class="boxChart"></canvas>
+
+                    <script>
+                        var xValues = ["No Basic Water Services", "No Safe Water", "Limited Services", "Basic Services", "Surface Water", "Unimproved Sources", "Safely Managed Drinking Water"];
+                        var yValues = [10.33, 11.63, 2.71, 18.42, 1.89, 5.72, 65.79];
+                        var barColors = [
+                        "#990000",
+                        "#ff3300",
+                        "#ff6600",
+                        "#ff9933",
+                        "#ffcc66",
+                        "#ffff66",
+                        "#4281f5"
+                        ];
+                        
+                        new Chart("myChart", {
+                            type: "pie",
+                            data: {
+                                labels: xValues,
+                                datasets: [{
+                                    backgroundColor: barColors,
+                                    data: yValues
+                                }]
+                            },
+                            options: {
+                                title: {
+                                    display: true,
+                                    text: "Access To Clean Water Around The World in 2017"
+                                }
+                            }
+                        });
+                    </script>  
+                </body>                
+            </div>
+
+            <!-- additional information presented below the graph/first text box.-->
+            <body>
+                <div class="boxHighlighted" style="background-color: #ffe5cf;width: 100%;padding-left: 40px;padding-top: 25px;margin-top: 30px;float: middle;">
+                    <h1 style="font-size:24px;font-family:helvetica;font-weight: bold">
+                        This is mostly due to three major forms of pollution:
+                    </h1>
+
+                    <p style="font-size:30px;font-family:helvetica;font-weight: bold">
+                        Plastic Pollution, Sewage Pollution, & <span class="chemicalColour">Chemical Pollution</span>.
+                    </p>
+                    
+                    <p style="font-size:24px;font-family:helvetica;font-weight: bold">
+                        However, this pollution doesn't only affect humans. <br>It also affects <span class="highlightUNSDG14">Life Below Water</span>.
+                    </p>
+
+                </div>
+            </body>
+
+        </div>
+
+        <!-- code of the "Chemical" tab.-->
+        <div id="Chemical" class="tabContent">
+
+            <!-- header / title slip at the top of the tab.-->
+            <body>
+                <div class="boxHighlighted" style="background-color: #ffe5cf;width: 45%;padding-left: 50px;padding-right: 25px;margin-bottom: 25px;float: right;">
+                    <p style="font-size:24px;font-family:helvetica;font-weight: bold">
+                        Non-Proft Organizations
+                    </p>
+                </div>
+            </body>
+
+            <!-- formats the text introduction & logo of the organization so that they are adjacent with each other & connected.-->
+            <!-- I decided to include this piece of code in my highlights because it demonstrates a technique that I utilized a lot, (and would utilize even more, if I'd finished the content of my site) which is an additional div tag that allows for related text/image boxes to be formatted so that they are adjacent with each other. This allows for me to include text and an image together horizontally while having them both encompassed in boxes to clearly separate their contents from the background image, which helps with both the presentation and utilization of space on my website.-->
+            <div class="chemicalAdjacent">
+                <body>
+                    <!-- box for the text introduction for the nonprofit organization.-->
+                    <div class="boxChemical" style="background-color: azure;">
+                        <p style="font-size:24px;font-family:helvetica">
+                            <span class="highlightColour">Oceana.org</span> is a non-proft organization focused on restoring the world's oceans with many efforts into reducing the amount of chemicals, namely oil, that are dumped into the ocean each year.
+                            <br><br>
+                            Click <a href="https://www.oceana.org/" target="_blank">here</a> or on the organization's logo to learn more.
+                        </p>
+                    </div>
+                </body>
+
+                <body>
+                    <!-- box for the clickable organization logo.-->
+                    <div class="boxOrganizationImg" style="background-color: #ffe5cf;">
+                        <p>
+                            <a href="https://www.oceana.org/" target="_blank"><img src="oceana-logo.png" alt="Oceana.org" style="width:100%"></a>
+                        </p>
+                    </div>
+                </body>
+            </div>
+        </div>
+        
+        <!-- script that makes the navigation bar tab buttons (Home & Chemical) work.-->
+        <!-- this code highlights my use of JavaScript on my website to make it more compact and organized as to not overcrowd the user with information on one page, but rather to section it off into more digestible chunks (that also allow me to dive further in depth about a specific subject.)-->
+        <script>
+            function openPage(pageName,elmnt,color) {
+                var i, tabContent, collapsibleTabs;
+                tabContent = document.getElementsByClassName("tabContent");
+
+                /*splits the contents of the two tabs; makes sure the right one appears when the corresponding button is pressed.*/
+                for (i = 0; i < tabContent.length; i++) {
+                    tabContent[i].style.display = "none";
+                }
+
+                /*opens the tab related to the button when prompted.*/
+                collapsibleTabs = document.getElementsByClassName("collapsibleTabs"); 
+
+                /*deselects (unhighlights) the other button when one is pressed.*/
+                for (i = 0; i < collapsibleTabs.length; i++) {
+                    collapsibleTabs[i].style.backgroundColor = "";
+                }
+
+                /*determines the colour of the button when they're pressed.*/
+                document.getElementById(pageName).style.display = "block";
+                elmnt.style.backgroundColor = "#f7c9a1";
+            }
+                document.getElementById("defaultOpen").click();
+        </script>
+        
+        <!-- script for the collapsible element of the navigation bar.-->
+        <!-- similarly to the tab buttons, this code shows my use of JavaScript to provide a more streamlined experience to my user. Instead of having the navigation bar constantly at the top of the page, this navigation bar appears below the title image/text, which encourages the reader to read that instead of focusing on the different subpages first. It also makes my website more unique and interactive.-->
+        <script>
+            /*script that makes the collapsible work when prompted; includes style/formatting of the transition.*/
+            var coll = document.getElementsByClassName("navbarCollapsible");
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var collapsibleContent = this.nextElementSibling;
+                    if (collapsibleContent.style.maxHeight) {
+                        collapsibleContent.style.maxHeight = null;
+                    } 
+                    else {
+                        collapsibleContent.style.maxHeight = collapsibleContent.scrollHeight + "px";
+                    } 
+                });
+            }
+        </script>
+            
+    </body>
+</html>
